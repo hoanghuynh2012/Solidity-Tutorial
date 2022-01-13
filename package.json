@@ -1,0 +1,23 @@
+{
+  "name": "solidity-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoanghuynh2012/Solidity-Tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoanghuynh2012/Solidity-Tutorial/issues"
+  },
+  "homepage": "https://github.com/hoanghuynh2012/Solidity-Tutorial#readme",
+  "dependencies": {
+    "solc": "^0.8.11",
+    "web3": "^1.6.1"
+  }
+}
