@@ -11,8 +11,7 @@
 ### Installation
 
 - `yarn`
-- `ganache-cli`
-- `node compile.js`
 
 ### Deploy And Run Contract
+ - `ganache-cli`
  - `node compile.js`
