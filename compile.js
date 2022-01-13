@@ -58,6 +58,8 @@ const deployAndRunContract = async () => {
      // Call the "getMyName" function and log the result:
     const myName = await contractInstance.methods.getMyName().call();
     console.log("Result from blockchain:", myName);
+    const newName = await contractInstance.methods.changeMyName("Huynh dep trai").call();
+    console.log("Result from blockchain:", newName);
   })
   .on('error', (err) => {
     console.log("Failed to deploy:", err) 
