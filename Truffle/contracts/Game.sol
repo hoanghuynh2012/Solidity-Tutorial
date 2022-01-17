@@ -3,25 +3,45 @@
 pragma solidity <=0.8.11;
 
 contract Game {
-    string private Bua = 'bua';
-    string private Keo = 'keo';
-    string private Bao = 'bao';
-    uint private temp;
-    int32 private result;
-    string private expected;
+    // enum Status {
+    //     Drawn,
+    //     Your are win,
+    //     You are loser
+    // }
+    // Status private result;
+    string private result;
     // Add this function:
     function playGame(string memory val) public returns(string memory) {
         return random(val);
     }
-    function random(string memory val) public returns(uint){
-        temp = uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp))) % 3 + 1;
-        if (keccak256(bytes(val)) == keccak256(bytes(Bua))) {
-            result = 1;
-        } else if (keccak256(bytes(val)) == keccak256(bytes(Keo))) {
-            result = 2;
-        } else if (keccak256(bytes(val)) == keccak256(bytes(Bao))) {
-            result = 3;
+    function random(string memory val) private returns(string memory){
+        uint numberRandom;
+        int32 temp;
+        numberRandom = uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp))) % 3 + 1;
+        if (keccak256(bytes(val)) == keccak256(bytes('bua')) || keccak256(bytes(val)) == keccak256(bytes('Bua'))) {
+            temp = 1;
+        } else if (keccak256(bytes(val)) == keccak256(bytes('keo')) || keccak256(bytes(val)) == keccak256(bytes('Keo'))) {
+            temp = 2;
+        } else if (keccak256(bytes(val)) == keccak256(bytes('bao')) || keccak256(bytes(val)) == keccak256(bytes('Bao'))) {
+            temp = 3;
         }
-        return temp;
+        //Bua == 1, Keo == 2 , Bao == 3
+        if(temp == int(numberRandom)){
+            result = "Drawn";
+            //result = Status.Drawn;
+        } else if(temp == 1 && int(numberRandom) == 2){ //Bua thang
+            result = "You Win";
+        } else if(temp == 1 && int(numberRandom) == 3){ //Bua thua
+            result = "You Lost";
+        } else if(temp == 2 && int(numberRandom) == 3){ //Bao thang
+            result = "You Win";
+        } else if(temp == 2 && int(numberRandom) == 1){ //Keo thua
+            result = "You Lost";
+        } else if(temp == 3 && int(numberRandom) == 1){ //Bua thang
+            result = "You Win";
+        } else if(temp == 3 && int(numberRandom) == 2){ //Bua thua
+            result = "You Lost";
+        }
+        return result;
     }
 }

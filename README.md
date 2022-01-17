@@ -9,6 +9,7 @@
 - [solc](https://www.npmjs.com/package/solc)
 - [web3](https://www.npmjs.com/package/web3)
 - [truffle](https://trufflesuite.com/)
+- [hardhat](https://hardhat.org/getting-started/#overview)
 
 ### Installation
 - `yarn`
