@@ -18,6 +18,10 @@
  - `node compile.js`
  - `ganache-cli`
  ## Truffle
- -`truffle migrate `
-
+ - `truffle migrate `
+ - `truffle console`
+## Hardhat
+ - `npx hardhat accounts`
+ - `npx hardhat compile`
+ - `npx hardhat run scripts/sample-script.js`
 
